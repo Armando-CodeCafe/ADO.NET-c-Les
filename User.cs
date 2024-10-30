@@ -38,7 +38,8 @@ class User
 
         if (reader.Read())
         {
-            Console.WriteLine($"Logged in as user with id: " + reader["id"]);
+            id = (int)reader["id"];
+            username = (string)reader["username"];
             connection.Close();
 
             return true;

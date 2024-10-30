@@ -30,6 +30,12 @@ class Program
             if (loggedIn)
             {
                 //gebruiker is succesvol ingelogd 
+                Console.WriteLine($"Logged in as user {u.username} with email {u.email} and id {u.id}\n");
+
+                Console.WriteLine("Choose what you want to do:\n1. Change username\n2. Change email\n3. Change password");
+
+                string option = Console.ReadLine();
+
             }
         }
 
