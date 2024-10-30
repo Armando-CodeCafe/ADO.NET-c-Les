@@ -53,4 +53,20 @@ class User
         }
 
     }
+    public void Update()
+    {
+        MySqlConnection connection = new MySqlConnection(
+            "Server=localhost;Database=NativeDb;User=root;"
+            );
+        connection.Open();
+
+        MySqlCommand command = connection.CreateCommand();
+        command.CommandText = "UPDATE Users SET username = @username, email = @email, password = @password WHERE id = @id";
+        command.Parameters.AddWithValue("@email", email);
+        command.Parameters.AddWithValue("@username", username);
+        command.Parameters.AddWithValue("@password", password);
+        command.Parameters.AddWithValue("@id", id);
+        command.ExecuteNonQuery();
+        connection.Close();
+    }
 }
